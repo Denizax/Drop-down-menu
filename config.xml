@@ -1,45 +1,41 @@
-    <preference name="permissions" value="none"/>
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="phonegap-version"  /> <!--  value="cli-5.2.0"  andaba bien: 3.7.0 !-->
-    <preference name="android-maxSDKVersion" value="" />
-    <preference name="android-targetSdkVersion" value="12" />  
-    <preference name="orientation" value="auto" />
-    <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="false" />
-    <preference name="android-minSDKVersion" value="17" /><!-- min android version: 4.2 !-->
-    <preference name="android-installLocation" value="auto" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="true" />
-    <preference name="splash-screen-duration" value="2500" />
-    <preference name="exit-on-suspend" value="true" />
-    <preference name="load-url-timeout" value="25000" />
-    <preference name="deployment-target" value="8.0" /> <!-- min iOS version 7 !-->
-    <preference name="android-build-tool" value="gradle" />
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.mealprep"
+        versionCode = "1" 
+        version     = "1.0.0" >
+ 
+        
+<preference name="permissions" value="none" />
 
-    <!-- para el fileupload !-->
-    <preference name="AndroidPersistentFileLocation"        value="Internal" />
-    <preference name="AndroidPersistentFileLocation"        value="Compatibility" />
-    <preference name="iosPersistentFileLocation"            value="Library" />
-    <preference name="iosPersistentFileLocation"            value="Compatibility" />
-    <gap:plugin name="cordova-plugin-file"                  source="npm" /> 
-    <gap:plugin name="cordova-plugin-file-transfer"                 source="npm" /> 
-    <access origin="cdvfile://*" />
-    <preference name="iosExtraFilesystems"                  value="library,library-nosync,documents,documents-nosync,cache,bundle,root" />
-    <preference name="AndroidExtraFilesystems"              value="files,files-external,documents,sdcard,cache,cache-external,root" />
+    <preference name="SplashScreen" value="splash" /> 
+        <preference name="SplashScreenDelay" value="4000" />
 
-    <!-- para el fileupload !-->
-    <gap:plugin name="ionic-plugin-keyboard"                                   source="npm" />
-    <gap:plugin name="cordova-plugin-splashscreen"              version="2.1.0" source="npm" />
-    <gap:plugin name="cordova-plugin-whitelist"                 version="1.0.0"       source="npm" />
-    <gap:plugin name="cordova-plugin-contacts"                          source="npm" />
-    <gap:plugin name="cordova-plugin-x-socialsharing"                   source="npm" /> 
-    <gap:plugin name="cordova-plugin-geolocation"               version="1.0.1"     source="npm" />
-    <gap:plugin name="cordova-plugin-calendar"                                                   source="npm" />
-    <gap:plugin name="cordova-plugin-device"                                                    source="npm" />
-   <plugin name="phonegap-plugin-push" source="npm">
-    <param name="SENDER_ID" value="700551245280" />
-</plugin>
+    
 
-    <access origin="tel:*" launch-external="yes" /> 
-    <access origin="geo:*" launch-external="yes" />
-    <access origin="*"/>
+    
+    <gap:plugin name="cordova-plugin-splashscreen" version="3.1.0" source="npm" />  
+<plugin name='cordova-plugin-whitelist' source='npm' />
+
+<plugin name="de.appplant.cordova.plugin.local-notification" spec="0.8.4" source="npm" />
+    <!-- versionCode is Android only -->
+    <!-- version is in major.minor.patch format --> 
+    <name>MealPrep</name>
+ 
+    <description>
+        It's a meal come true!
+    </description>
+ 
+    <author href="" email="">
+DZ
+</author>
+
+
+     <icon src="icon.png" />       
+    <splash src="splash.png" />
+           <allow-navigation href="*" />
+    <allow-intent href="*" />
+<access origin="*" />
+
+ 
+</widget>
