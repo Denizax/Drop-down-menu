@@ -43,4 +43,21 @@
         
         
     </body>
+    
+    <script type="text/javascript" src="cordova.js"></script>
+<script>
+document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+        function onDeviceReady() {    
+        cordova.plugins.notification.local.schedule({
+    id: 1,
+    title: "Notification",
+    firstAt:new Date(),
+    message: "Denica Zaharieva",
+    every: "week"
+});
+        };
+    
+    
+    
+    
 </html>
