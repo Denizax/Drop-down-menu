@@ -20,18 +20,18 @@
 
     
         <button id="notification">COOK THIS!</button>
-    
+    <script type="text/javascript" src="cordova.js"></script>
     <script>
     document.addEventListener('deviceready', function () {
     
 
-    cordova.plugins.notification.local.on("click", function (notification) {
-        cordova.plugins.notification.local.schedule({
+    document.getElementById("notification").addEventListener("click",function(){
+                        cordova.plugins.notification.local.schedule({
         title: "New Message",
     message: "Hi, are you ready? We are waiting.",
     sound: "file://sounds/message.mp3",
-    icon: "http://my.domain.de/avatar/user#id=123"
-    });
+    icon: "http://my.domain.de/avatar/user#id=123"    
+        });
         
         
 }, false);
