@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head> 
@@ -17,24 +19,23 @@
             </form>
         
 
-
+<button onclick="schedule();" id="boutonAlerte">Alerte</button>
     
-        <button id="notification">COOK THIS!</button>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script>
-    document.addEventListener('deviceready', function () {
-    
+        <script type="text/javascript">
+schedule = function () {
+	cordova.plugins.notification.local.schedule({
+		id: 1,
+		text: 'Test Message 1',
+		icon: 'http://3.bp.blogspot.com/-Qdsy-GpempY/UU_BN9LTqSI/AAAAAAAAAMA/LkwLW2yNBJ4/s1600/supersu.png',
+		smallIcon: 'res://cordova',
+		sound: null,
+												badge: 1,
+		data: { test: id }
+	});
+};
 
-    document.getElementById("notification").addEventListener("click",function(){
-                        cordova.plugins.notification.local.schedule({
-        title: "New Message",
-    message: "Hi, are you ready? We are waiting.",
-    sound: "file://sounds/message.mp3",
-    icon: "http://my.domain.de/avatar/user#id=123"    
-        });
-        
-        
-}, false);
+document.addEventListener('deviceready', function () {
+	cordova.plugins.notification.local.on('schedule', function (notification));
     </script>
     
     
