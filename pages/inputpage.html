@@ -19,24 +19,18 @@
             </form>
         
 
-<button onclick="schedule();" id="boutonAlerte">Alerte</button>
-    
-        <script type="text/javascript">
-schedule = function () {
-	cordova.plugins.notification.local.schedule({
-		id: 1,
-		text: 'Test Message 1',
-		icon: 'http://3.bp.blogspot.com/-Qdsy-GpempY/UU_BN9LTqSI/AAAAAAAAAMA/LkwLW2yNBJ4/s1600/supersu.png',
-		smallIcon: 'res://cordova',
-		sound: null,
-												badge: 1,
-		data: { test: id }
-	});
-};
-
-document.addEventListener('deviceready', function () {
-	cordova.plugins.notification.local.on('schedule', function (notification));
-    </script>
+<script type="text/javascript" src="cordova.js"></script>
+<script>
+document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+        function onDeviceReady() {    
+        cordova.plugins.notification.local.schedule({
+    id: 1,
+    title: "Notification",
+    firstAt:new Date(),
+    message: "Denica Zaharieva",
+    every: "week"
+});
+        };
     
     
    </body>
